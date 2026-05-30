@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura Inteligente</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+      @layer base {
+         :root {
+          @apply text-sm;
+           line-height: 1.5;
+         }
+      }
+    </style>
+</head>
+<body class="bg-[url('photo.jpg')] bg-cover bg-center bg-no-repeat w-full min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-10">
+
+    <main class="bg-gray-400 p-6 rounded-2xl shadow-2xl w-full max-w-md border border-slate-700">
+        
+        <!-- Encabezado de la aplicación -->
+        <header class="mb-6 text-center">
+            <h1 class="text-2xl font-bold text-blue-700 md:text-3xl">Conversor Térmico</h1>
+            <p class="text-white text-xl mt-1">Transforma unidades de temperatura al instante</p>
+        </header>
+
+        <section class="grid grid-cols-1 gap-4">
+            
+            
+            <div>
+                <label for="inputGrados" class="block text-sm font-semibold text-white mb-2">Introduce los grados:</label>
+                <input type="number" id="inputGrados" class="w-full p-3 bg-slate-700 border border-slate-700 rounded-lg text-slate-200 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none" placeholder="Ej: 0">
+            </div>
+
+            <div>
+                <label for="selectTipo" class="block text-sm font-semibold text-white mb-2">Unidad de origen:</label>
+                <select id="selectTipo" class="w-full p-3 bg-slate-700 border border-slate-700 rounded-lg text-slate-200 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none cursor-pointer">
+                    <option value="C">Celsius (°C)</option>
+                    <option value="F">Fahrenheit (°F)</option>
+                </select>
+            </div>
+
+            <div class="flex flex-col">
+                <label for="inputResultado" class="block text-sm font-semibold text-white mb-2 text-center">Resultado Final:</label>
+                <input type="text" id="inputResultado" readonly class="w-full p-4 bg-slate-700 border border-slate-700 rounded-lg text-center text-green-400 font-bold text-2xl focus:outline-none tracking-wider" placeholder="---">
+            </div>
+
+            <div class="flex flex-col mt-2">
+                <button id="btnConvertir" class="w-full bg-yellow-300 hover:bg-gray-300 text-blue-600 font-bold py-4 px-4 rounded-lg transition duration-200 shadow-lg uppercase text-sm tracking-wider cursor-pointer">
+                    Calcular Conversión
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
